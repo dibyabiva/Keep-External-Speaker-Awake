@@ -1,0 +1,17 @@
+[Unit]
+Description=play_silence
+
+[Service]
+User=dibyabiva
+WorkingDirectory=/home/dibyabiva/Keep-External-Speaker-Awake
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+ExecStart=python3 play_silence.py
+
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=10
+
+
+[Install]
+WantedBy=multi-user.target
